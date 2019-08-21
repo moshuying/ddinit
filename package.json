@@ -1,0 +1,34 @@
+{
+  "name": "dd-cli",
+  "version": "1.0.0",
+  "author": "https://me.csdn.net/qq_34846662",
+  "description": "`封装了一些常用的钉钉小程序服务端API，获取用户信息、部门信息、发送工作消息、审批流等`",
+  "main": "index.js",
+  "scripts": {
+    "fix": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'",
+    "dev": "node ./lib/src/index.js",
+    "start": "npx tsc",
+    "serve": "node ./lib/src/main.js"
+  },
+  "dependencies": {
+    "@types/node": "^10.5.2",
+    "axios": "^0.18.0",
+    "cron": "^1.7.1",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "1"
+  },
+  "keywords": [
+    "钉钉",
+    "dingding",
+    "dd",
+    "dd-cli"
+  ],
+  "license": "ISC"
+}
