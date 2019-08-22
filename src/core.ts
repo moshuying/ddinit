@@ -31,8 +31,8 @@ class DD_Cli {
     this.Key = key
     this.Secret = Secret
     speed = speed || 3000
-    week = week || 1
-    moon = moon || 1
+    week = week || 0
+    moon = moon || 0
     this.refreshen(week, moon, speed)
   }
   /**
