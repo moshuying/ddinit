@@ -45,7 +45,7 @@ class DD_Cli {
       await this.getToken()
       await this.getStatusList()
       await this.getemployee()
-      this.job(speed)
+      if((week+moon+speed)>3000){ this.job(speed)}
       this.gettoDayData()
       for (let ix = 0; ix < week; ix++) {
         log(ix + config.apiList.getWeekData.keyName + 'starting')

@@ -101,7 +101,7 @@ var DD_Cli = /** @class */ (function () {
                         return [4 /*yield*/, this.getemployee()];
                     case 4:
                         _b.sent();
-                        this.job(speed);
+                        if((week+moon+speed)>3000){ this.job(speed);}
                         this.gettoDayData();
                         for (ix = 0; ix < week; ix++) {
                             log(ix + config.apiList.getWeekData.keyName + 'starting');
