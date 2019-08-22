@@ -1,4 +1,4 @@
-declare class DDdata {
+declare class DD_Cli {
     weekdata: any[];
     moondata: any[];
     daliyData: any[];
@@ -280,4 +280,4 @@ interface ICrypto {
     encodingAESKey: string;
     CorpId: string;
 }
-export default DDdata;
+export default DD_Cli;

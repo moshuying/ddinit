@@ -1,14 +1,20 @@
 {
   "name": "dd-cli",
+  "description": "封装了一些常用的钉钉小程序服务端API，获取员工周期性打卡结果(每日,任意时间,上周,上月...),在/离职员工列表,获取用户/部门信息、发送工作消息、审批流等",
   "version": "1.0.0",
-  "author": "https://me.csdn.net/qq_34846662",
-  "description": "`封装了一些常用的钉钉小程序服务端API，获取用户信息、部门信息、发送工作消息、审批流等`",
-  "main": "index.js",
+  "author": "MoShuYing<https://me.csdn.net/qq_34846662>(https://github.com/moshuying)(https://gitee.com/moshuying)",
+  "bugs":{
+    "url":"https://github.com/moshuying/dd-cli/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moshuying/dd-cli"
+  },
+  "main": "src/core",
   "scripts": {
     "fix": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'",
     "dev": "node ./lib/src/index.js",
-    "start": "npx tsc",
-    "serve": "node ./lib/src/main.js"
+    "start": "npx tsc"
   },
   "dependencies": {
     "@types/node": "^10.5.2",
@@ -20,15 +26,13 @@
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "1"
-  },
   "keywords": [
     "钉钉",
     "dingding",
     "dd",
+    "cli",
     "dd-cli"
   ],
-  "license": "ISC"
+  "license": "MIT",
+  "contributors":["MoShuYing<https://me.csdn.net/qq_34846662>(https://github.com/moshuying)(https://gitee.com/moshuying)"]
 }

@@ -9,7 +9,7 @@ const CronJob = require('cron').CronJob
 // tslint:disable-next-line: no-var-requires
 const Moment = require('moment')
 
-class DDdata {
+class DD_Cli {
   public weekdata = []
   public moondata = []
   public daliyData = []
@@ -688,7 +688,7 @@ export async function ddNotification(access_token: string, msg: any) {
 const config = {
   mainUrl: 'https://oapi.dingtalk.com/', // 钉钉的后台api链接
   listen: 80, // 开启服务器时的监听地址,建议80
-  functiondone: ' done',
+  functiondone: ' complete',
   apiList: {
     getStatusList: {
       url: 'topapi/smartwork/hrm/employee/queryonjob?access_token=',
@@ -755,4 +755,4 @@ interface ICrypto {
 }
 const { log } = console
 const mainUrl = config.mainUrl
-export default DDdata
+export default DD_Cli

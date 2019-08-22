@@ -113,4 +113,4 @@ DDBizMsgCrypt.prototype.encrypt = function (text) {
     return cipheredMsg.toString('base64');
 };
 exports.default = DDBizMsgCrypt;
-//# sourceMappingURL=cypto.js.map
+//# sourceMappingURL=crypto.js.map
