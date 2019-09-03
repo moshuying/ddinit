@@ -1,7 +1,7 @@
 {
   "name": "ddinit",
   "description": "封装了一些常用的钉钉小程序服务端API，获取员工周期性打卡结果(每日,任意时间,上周,上月...),在/离职员工列表,获取用户/部门信息、发送工作消息、审批流等",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "author": "MoShuYing<https://me.csdn.net/qq_34846662>(https://github.com/moshuying)(https://gitee.com/moshuying)",
   "bugs":{
     "url":"https://github.com/moshuying/dd-cli/issues"
