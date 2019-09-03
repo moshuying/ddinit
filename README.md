@@ -11,6 +11,7 @@
 
 > npm install ddinit
 
+[觉得好用的话麻烦给个star吧,感激不尽](https://github.com/moshuying/dd-cli)
 
 构建并使用,后三位选填,不填的话不会缓存周/月考勤数据,最后一位是每日考勤数据的更新速度,单位是毫秒
 ```javascript
