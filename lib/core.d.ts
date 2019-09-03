@@ -1,4 +1,36 @@
-declare class DD_Cli {
+interface IMessage {
+    agent_id: number;
+    userid_list: string;
+    dept_id_list?: string;
+    to_all_user?: boolean;
+    msg: object;
+}
+interface ITask {
+    agent_id: number;
+    task_id: number;
+}
+interface IInstance {
+    process_code: string;
+    originator_user_id: string;
+    dept_id: number;
+    approvers: string;
+    form_component_values: any;
+}
+interface IRegisterCallBack {
+    call_back_tag: string[];
+    token: string;
+    aes_key: string;
+    url: string;
+}
+interface ICrypto {
+    timestamp: number;
+    nonce: string;
+    token: string;
+    userid: string;
+    encodingAESKey: string;
+    CorpId: string;
+}
+declare class DDinit {
     weekdata: any[];
     moondata: any[];
     daliyData: any[];
@@ -105,10 +137,10 @@ declare class DD_Cli {
      */
     getAccessTonken(): Promise<void>;
     /**
-       * 获取用户ID
-       * @param code 授权码
-       * @param token 秘钥
-       */
+     * 获取用户ID
+     * @param code 授权码
+     * @param token 秘钥
+     */
     getUserId(code: string, token?: string): Promise<any>;
     /**
      * 获取用户信息
@@ -135,16 +167,16 @@ declare class DD_Cli {
      */
     getAllDepartment(id: number, token?: string): Promise<any>;
     /**
-   * 查询指定用户的所有上级父部门路径
-   * @param userId 希望查询的用户的id
-   * @param token 秘钥
-   */
+     * 查询指定用户的所有上级父部门路径
+     * @param userId 希望查询的用户的id
+     * @param token 秘钥
+     */
     departmentListParentDepts(userId: string, token?: string): Promise<any>;
     /**
-    * 获取企业员工人数
-    * @param onlyActive 0：包含未激活钉钉的人员数量 1：不包含未激活钉钉的人员数量
-    * @param token 秘钥
-    */
+     * 获取企业员工人数
+     * @param onlyActive 0：包含未激活钉钉的人员数量 1：不包含未激活钉钉的人员数量
+     * @param token 秘钥
+     */
     getOrgUserCount(onlyActive: number, token?: string): Promise<any>;
     /**
      * 发送工作消息
@@ -159,13 +191,13 @@ declare class DD_Cli {
      */
     setWorkerMessage(data: IMessage, token?: string): Promise<any>;
     /**
-   * 查询工作通知消息的发送进度
-   * @param data ITask {
-   *    @param agent_id: number; // 应用agent_id,
-   *    @param task_id: number; // 发送消息时钉钉返回的任务id
-   * }
-   * @param token 秘钥
-   */
+     * 查询工作通知消息的发送进度
+     * @param data ITask {
+     *    @param agent_id: number; // 应用agent_id,
+     *    @param task_id: number; // 发送消息时钉钉返回的任务id
+     * }
+     * @param token 秘钥
+     */
     viewWorkerMessage(data: ITask, token?: string): Promise<any>;
     /**
      * 查询工作通知消息的发送结果
@@ -189,21 +221,21 @@ declare class DD_Cli {
      */
     createProcessInstance(data: IInstance, token?: string): Promise<any>;
     /**
-   * 获取审批实例
-   * @param id 审批实例ID
-   * @param token 秘钥
-   */
+     * 获取审批实例
+     * @param id 审批实例ID
+     * @param token 秘钥
+     */
     getProcessInstance(id: string, token?: string): Promise<any>;
     /**
-    * 注册审批回调
-    * @param data IRegisterCallBack{
-    *    @param call_back_tag: string[]; 需要监听的事件类型
-    *    @param token: 加解密需要用到的token;
-    *    @param aes_key: 数据加密密钥。用于回调数据的加密，长度固定为43个字符，从a-z, A-Z, 0-9共62个字符中选取,您可以随机生成，ISV(服务提供商)推荐使用注册套件时填写的EncodingAESKey;
-    *    @param url: 接收事件回调的url，必须是公网可以访问的url地址
-    * }
-    * @param token
-    */
+     * 注册审批回调
+     * @param data IRegisterCallBack{
+     *    @param call_back_tag: string[]; 需要监听的事件类型
+     *    @param token: 加解密需要用到的token;
+     *    @param aes_key: 数据加密密钥。用于回调数据的加密，长度固定为43个字符，从a-z, A-Z, 0-9共62个字符中选取,您可以随机生成，ISV(服务提供商)推荐使用注册套件时填写的EncodingAESKey;
+     *    @param url: 接收事件回调的url，必须是公网可以访问的url地址
+     * }
+     * @param token
+     */
     registerCallBack(data: IRegisterCallBack, token?: string): Promise<any>;
     /**
      * 实例化crypto
@@ -243,41 +275,9 @@ declare class DD_Cli {
  */
 export declare function authEncrypto(accessKey: string, appSecret: string, code: string): Promise<any>;
 /**
-* 发送钉钉通知  消息类型 https://open-doc.dingtalk.com/microapp/serverapi2/qf2nxq
-* @param access_token
-* @param msg
-*/
-export declare function ddNotification(access_token: string, msg: any): Promise<any>;
-interface IMessage {
-    agent_id: number;
-    userid_list: string;
-    dept_id_list?: string;
-    to_all_user?: boolean;
-    msg: object;
-}
-interface ITask {
-    agent_id: number;
-    task_id: number;
-}
-interface IInstance {
-    process_code: string;
-    originator_user_id: string;
-    dept_id: number;
-    approvers: string;
-    form_component_values: any;
-}
-interface IRegisterCallBack {
-    call_back_tag: string[];
-    token: string;
-    aes_key: string;
-    url: string;
-}
-interface ICrypto {
-    timestamp: number;
-    nonce: string;
-    token: string;
-    userid: string;
-    encodingAESKey: string;
-    CorpId: string;
-}
-export default DD_Cli;
+ * 发送钉钉通知  消息类型 https://open-doc.dingtalk.com/microapp/serverapi2/qf2nxq
+ * @param Token
+ * @param msg
+ */
+export declare function ddNotification(Token: string, msg: any): Promise<any>;
+export default DDinit;
